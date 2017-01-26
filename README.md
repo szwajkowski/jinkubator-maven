@@ -7,7 +7,6 @@ Follow steps from [project website](https://maven.apache.org/install.html)
 ### Generating project
 
 Maven goal `mvn archetype:generate` presents you with available project templates. 
-![archetypes](images/archetypes.png)
 ```
 1724: remote -> pl.org.miki:scala-quickstart-archetype (Customizable cruft-free Scala archetype. Options:
 -sourceFolders: [all-in-src-java, scala-only, both-split-src]. DEFAULT: all-in-src-java.
@@ -51,8 +50,56 @@ Maven goal `mvn archetype:generate` presents you with available project template
 Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 909:
 ```
 As there is a lot of them, they can be filtered by passing `[groupId:]artifactId` ie. `org.apache.maven:` will show only archetypes that comes with maven itself. 
-![filtering](images/filtering.png)
+```
+Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): : org.apache.maven:
+Choose archetype:
+1: remote -> org.apache.maven.archetypes:maven-archetype-archetype (An archetype which contains a sample archetype.)
+2: remote -> org.apache.maven.archetypes:maven-archetype-j2ee-simple (An archetype which contains a simplifed sample J2EE application.)
+3: remote -> org.apache.maven.archetypes:maven-archetype-marmalade-mojo (-)
+4: remote -> org.apache.maven.archetypes:maven-archetype-mojo (An archetype which contains a sample a sample Maven plugin.)
+5: remote -> org.apache.maven.archetypes:maven-archetype-plugin (An archetype which contains a sample Maven plugin.)
+6: remote -> org.apache.maven.archetypes:maven-archetype-plugin-site (An archetype which contains a sample Maven plugin site. This archetype can be layered upon an
+    existing Maven plugin project.)
+7: remote -> org.apache.maven.archetypes:maven-archetype-portlet (An archetype which contains a sample JSR-268 Portlet.)
+8: remote -> org.apache.maven.archetypes:maven-archetype-profiles (-)
+9: remote -> org.apache.maven.archetypes:maven-archetype-quickstart (An archetype which contains a sample Maven project.)
+10: remote -> org.apache.maven.archetypes:maven-archetype-site (An archetype which contains a sample Maven site which demonstrates some of the supported document types like
+    APT, XDoc, and FML and demonstrates how to i18n your site. This archetype can be layered
+    upon an existing Maven project.)
+11: remote -> org.apache.maven.archetypes:maven-archetype-site-simple (An archetype which contains a sample Maven site.)
+12: remote -> org.apache.maven.archetypes:maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
+Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 9:
+```
 Default one is `org.apache.maven.archetypes:maven-archetype-quickstart` a simple java application. It consists of single class App.java, JUnit test AppTest.java and pom.xml.
+
+pom.xml:
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>pl.poznan.jug.jinkubator</groupId>
+  <artifactId>maven</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>maven</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
 
 ### pom.xml
 POM stands for Project Object Model. It contains information about the project and additional configuration. There can be only one pom.xml per project. Every POM file requires some mandatory fields which are:
@@ -63,7 +110,6 @@ POM stands for Project Object Model. It contains information about the project a
 
 Those fields should uniquely identify a project. Every POM inherits from so called **Super POM** even if it is not specified. Project pom.xml and Super POM are combined together by Maven to create an *effective POM*.
 It can be seen by executing `mvn help:effective-pom` command. 
-
 
 ### Basic goals
  
