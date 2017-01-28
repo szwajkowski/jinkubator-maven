@@ -112,9 +112,18 @@ Those fields should uniquely identify a project. Every POM inherits from so call
 It can be seen by executing `mvn help:effective-pom` command. 
 
 ### Basic goals
+
+http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
  
 ### Dependecies
 
+http://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies
+
 ### Plugins
 
+http://maven.apache.org/plugins/index.html
+
 #### Configuration
+
+http://maven.apache.org/guides/getting-started/index.html#How_do_I_use_plugins
+
