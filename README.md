@@ -70,7 +70,7 @@ Choose archetype:
 12: remote -> org.apache.maven.archetypes:maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
 Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 9:
 ```
-Default one is `org.apache.maven.archetypes:maven-archetype-quickstart` a simple java application. It consists of single class App.java, JUnit test AppTest.java and pom.xml.
+Default one is `org.apache.maven.archetypes:maven-archetype-quickstart` a simple java application. It consists of single class `App.java`, JUnit test `AppTest.java` and `pom.xml`.
 
 pom.xml:
 ```xml
@@ -78,8 +78,8 @@ pom.xml:
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>pl.poznan.jug.jinkubator</groupId>
-  <artifactId>maven</artifactId>
+  <groupId>pl.poznan.jug</groupId>
+  <artifactId>jinkubator-maven</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -104,9 +104,9 @@ pom.xml:
 ### pom.xml
 POM stands for Project Object Model. It contains information about the project and additional configuration. There can be only one pom.xml per project. Every POM file requires some mandatory fields which are:
 
-* groupId
-* artifactId
-* version
+* groupId - an id of project's group, ie. `pl.poznan.jug`
+* artifactId - usually it is just the name of the project, ie. `jinkubator-maven`
+* version - current project version
 
 Those fields should uniquely identify a project. Every POM inherits from so called **Super POM** even if it is not specified. Project pom.xml and Super POM are combined together by Maven to create an *effective POM*.
 It can be seen by executing `mvn help:effective-pom` command. 
