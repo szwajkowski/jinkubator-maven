@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>pl.poznan.jug</groupId>
@@ -17,7 +16,8 @@
   </developers>
 
   <scm>
-    <url>git@github.com:szwajkowski/jinkubator-maven.git</url>
+    <connection>scm:git:git@github.com:szwajkowski/jinkubator-maven.git</connection>
+    <tag>HEAD</tag>
   </scm>
 
   <properties>
@@ -40,6 +40,12 @@
       <configuration>
         <target>1.8</target>
         <source>1.8</source>
+      </configuration>
+    </plugin>
+    <plugin>
+      <artifactId>maven-release-plugin</artifactId>
+      <configuration>
+        <tagNameFormat>@{project.version}</tagNameFormat>
       </configuration>
     </plugin>
   </plugins>
