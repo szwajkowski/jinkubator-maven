@@ -9,6 +9,16 @@
 
   <name>jinkubator-maven</name>
   <url>http://maven.apache.org</url>
+  <developers>
+    <developer>
+      <name>Lukasz Szwajkowski</name>
+      <email>szwajkowskilukasz@gmail.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <url>git@github.com:szwajkowski/jinkubator-maven.git</url>
+  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,4 +32,16 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+  <plugins>
+    <plugin>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <configuration>
+        <target>1.8</target>
+        <source>1.8</source>
+      </configuration>
+    </plugin>
+  </plugins>
+  </build>
 </project>
