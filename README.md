@@ -79,7 +79,7 @@ pom.xml:
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>pl.poznan.jug</groupId>
-  <artifactId>jinkubator-maven</artifactId>
+  <artifactId>jugademy-maven</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -105,7 +105,7 @@ pom.xml:
 POM stands for Project Object Model. It contains information about the project and additional configuration. There can be only one pom.xml per project. Every POM file requires some mandatory fields which are:
 
 * groupId - an id of project's group, ie. `pl.poznan.jug`
-* artifactId - usually it is just the name of the project, ie. `jinkubator-maven`
+* artifactId - usually it is just the name of the project, ie. `jugademy-maven`
 * version - current project version
 
 Those fields should uniquely identify a project. Every POM inherits from so called **Super POM** even if it is not specified. Project pom.xml and Super POM are combined together by Maven to create an *effective POM*.
